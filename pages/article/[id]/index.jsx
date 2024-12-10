@@ -5,8 +5,6 @@ import { getFormattedDate } from "@/lib/dateUtils";
 import CommentList from "@/components/CommentList";
 import styles from "./index.module.css";
 
-const formattedDate = getFormattedDate(article.createdAt);
-
 // 서버에서 데이터 가져오기
 export async function getServerSideProps(context) {
   const { id } = context.params; // URL에서 ID 가져오기
@@ -35,6 +33,8 @@ export async function getServerSideProps(context) {
 export default function ArticleDetail({ article, error }) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const formattedDate = getFormattedDate(article.createdAt);
 
   const onMenuToggle = () => {
     setIsMenuOpen((prev) => !prev);
