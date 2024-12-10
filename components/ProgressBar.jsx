@@ -6,7 +6,7 @@ function ProgressBar() {
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => (prev < 100 ? prev + 1 : 100));
-    }, 350);
+    }, 320);
 
     return () => clearInterval(interval);
   }, []);
